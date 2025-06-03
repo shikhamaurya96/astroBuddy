@@ -1,5 +1,6 @@
 import React from 'react'
 import AstrologerCard from './AstrologerCard'
+import { astrologers } from '../../utils/astrologersData'
 const Astrologers = () => {
   return (
     <div className='mt-16  h-screen overflow-x-hidden bg-blue-gray-50 '>
@@ -15,8 +16,16 @@ const Astrologers = () => {
           
 
         </div>
-        <div className=' mt-20 md:mx-28 mx-4'>
-        <AstrologerCard/>
+        <div className=' mt-20 md:mx-28 mx-4 flex gap-4 flex-wrap justify-center border border-black'>
+          {
+            astrologers.map((astrologer)=> <AstrologerCard 
+            name= {astrologer.name} 
+            image={astrologer.image} 
+            experties={astrologer.experties} 
+            language = {astrologer.language} 
+            experience = {astrologer.experience}/>)
+          }
+       
         </div>
         
     </div>
